@@ -6,7 +6,6 @@ from google.cloud import vision, storage # pylint: disable=import-error
 storage_client = storage.Client()
 client = vision.ImageAnnotatorClient()
 
-#Funcion main
 def main(event, context):# pylint: disable=missing-function-docstring
     print("Evento-contexto", context)
 
