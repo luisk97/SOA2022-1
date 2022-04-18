@@ -20,6 +20,7 @@ steps:
         cd terraform/enviroments/$BRANCH_NAME
         terraform init
       else
+        ls
         for dir in terraform/enviroments/*/
         do 
           cd ${dir}   
