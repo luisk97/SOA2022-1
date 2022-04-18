@@ -1,9 +1,9 @@
-from google.cloud import vision, storage
+from google.cloud import vision, storage # pylint: disable=no-name-in-module
 
 storage_client = storage.Client()
 client = vision.ImageAnnotatorClient()
 
-def main(event, context):
+def main(event, context):# pylint: disable=missing-function-docstring
     print("Evento-contexto", context)
 
     image_to_open = 'images/cara.jpg'
