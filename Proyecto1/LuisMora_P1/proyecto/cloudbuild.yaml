@@ -13,7 +13,7 @@ steps:
       pip3 install -U setuptools
       pip3 install -U pylint
       echo "*********** Installing Cloud************"
-      pip3 install --upgrade google-cloud-vision-2.7.0
+      pip3 install google-cloud-vision==2.6.2
       pip3 install --upgrade google-cloud-storage
       cd Proyecto1/LuisMora_P1/proyecto/cloud_function
       pylint main.py
