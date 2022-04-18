@@ -5,15 +5,18 @@ steps:
   args: 
   - '-c'
   - | 
-      echo "***********************"
-      echo "$BRANCH_NAME"
-      echo "***********************"
-      echo "*********** Cheking Code ************"
+      echo "***********************************"
+      echo "Cheking Code in branch $BRANCH_NAME"
+      echo "***********************************"
+      echo "*********** Installing pip ************"
       apk add py3-pip
       pip3 install -U setuptools
+      echo "*********** Installing pylint ************"
       pip3 install -U pylint
-      echo "*********** Installing Cloud************"
-      pip3 install google-cloud-vision==2.6.2
+      echo "*********** Installing cloud ************"
+      echo "*********** Cloud vision ************"
+      pip3 install google-cloud-vision==2.7.2
+      echo "*********** Cloud storage ************"
       pip3 install --upgrade google-cloud-storage
       cd Proyecto1/LuisMora_P1/proyecto/cloud_function
       pylint main.py
