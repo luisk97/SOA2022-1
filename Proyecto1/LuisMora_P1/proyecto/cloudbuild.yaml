@@ -9,6 +9,7 @@ steps:
       echo "$BRANCH_NAME"
       echo "***********************"
       echo "*********** Cheking Code ************"
+      apk add py3-pip
       pip3 install -U setuptools
       pip3 install -U pylint
       cd Proyecto1/LuisMora_P1/proyecto/cloud_function
