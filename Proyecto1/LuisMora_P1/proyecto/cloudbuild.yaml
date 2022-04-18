@@ -8,7 +8,18 @@ steps:
       echo "***********************"
       echo "$BRANCH_NAME"
       echo "***********************"
-      
+
+steps:
+- id: 'code check'
+  name: 'pylint'
+  entrypoint: 'sh'  
+  args: 
+  - '-c'
+  - | 
+      echo "*********** Cheking Code ************"
+      cd Proyecto1/LuisMora_P1/proyecto/cloud_function
+      pylint main.py
+
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
