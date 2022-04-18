@@ -1,8 +1,4 @@
-import os
-import tempfile
-
 from google.cloud import storage, vision
-from wand.image import Image
 
 storage_client = storage.Client()
 client = vision.ImageAnnotatorClient()
