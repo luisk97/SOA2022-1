@@ -1,3 +1,6 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=invalid-name
+# pylint: disable=unused-argument
 from google.cloud import vision, storage # pylint: disable=no-name-in-module
 
 storage_client = storage.Client()
