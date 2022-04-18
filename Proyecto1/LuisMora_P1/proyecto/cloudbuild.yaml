@@ -16,6 +16,7 @@ steps:
   - '-c'
   - |
       if [ -d "terraform/enviroments/$BRANCH_NAME/" ]; then
+        ls
         cd terraform/enviroments/$BRANCH_NAME
         terraform init
       else
