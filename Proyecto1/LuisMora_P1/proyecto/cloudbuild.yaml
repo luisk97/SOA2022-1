@@ -13,6 +13,7 @@ steps:
       pip3 install -U setuptools
       pip3 install -U pylint
       cd Proyecto1/LuisMora_P1/proyecto/cloud_function
+      pip3 install -r requirements.txt
       pylint main.py
 
 - id: 'tf init'
