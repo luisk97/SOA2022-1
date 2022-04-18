@@ -15,13 +15,13 @@ steps:
   args: 
   - '-c'
   - |
-      if [ -d "terraform/enviroments/$BRANCH_NAME/" ]; then
+      if [ -d "Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME/" ]; then
         ls
-        cd terraform/enviroments/$BRANCH_NAME
+        cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME
         terraform init
       else
         ls
-        for dir in terraform/enviroments/*/
+        for dir in Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/*/
         do 
           cd ${dir}   
           env=${dir%*/}
@@ -41,11 +41,11 @@ steps:
   args: 
   - '-c'
   - | 
-      if [ -d "terraform/enviroments/$BRANCH_NAME/" ]; then
-        cd terraform/enviroments/$BRANCH_NAME
+      if [ -d "Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME/" ]; then
+        cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME
         terraform plan
       else
-        for dir in terraform/enviroments/*/
+        for dir in Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/*/
         do 
           cd ${dir}   
           env=${dir%*/}
@@ -67,8 +67,8 @@ steps:
   args: 
   - '-c'
   - | 
-      if [ -d "terraform/enviroments/$BRANCH_NAME/" ]; then
-        cd terraform/enviroments/$BRANCH_NAME      
+      if [ -d "Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME/" ]; then
+        cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME      
         terraform apply -auto-approve
       else
         echo "***************************** SKIPPING APPLYING *******************************"
