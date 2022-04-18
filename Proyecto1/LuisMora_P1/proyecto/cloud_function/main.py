@@ -1,13 +1,12 @@
-import os
-import tempfile
-
-from google.cloud import storage, vision
-from wand.image import Image
+# pylint: disable=missing-module-docstring
+# pylint: disable=invalid-name
+# pylint: disable=unused-argument
+from google.cloud import vision, storage # pylint: disable=import-error
 
 storage_client = storage.Client()
 client = vision.ImageAnnotatorClient()
 
-def main(event, context):
+def main(event, context):# pylint: disable=missing-function-docstring
     print("Evento-contexto", context)
 
     image_to_open = 'images/cara.jpg'
