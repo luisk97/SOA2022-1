@@ -7,6 +7,7 @@ from wand.image import Image
 storage_client = storage.Client()
 client = vision.ImageAnnotatorClient()
 
+#Funcion main
 def main(event, context):
     print("Evento-contexto", context)
 
