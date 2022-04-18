@@ -1,5 +1,5 @@
 steps:
-- id: 'branch name'
+- id: 'code check'
   name: 'alpine'
   entrypoint: 'sh'  
   args: 
@@ -8,14 +8,6 @@ steps:
       echo "***********************"
       echo "$BRANCH_NAME"
       echo "***********************"
-
-steps:
-- id: 'code check'
-  name: 'pylint'
-  entrypoint: 'sh'  
-  args: 
-  - '-c'
-  - | 
       echo "*********** Cheking Code ************"
       cd Proyecto1/LuisMora_P1/proyecto/cloud_function
       pylint main.py
