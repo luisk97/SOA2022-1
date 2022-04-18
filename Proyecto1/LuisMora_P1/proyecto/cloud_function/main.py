@@ -1,7 +1,7 @@
 # pylint: disable=missing-module-docstring
 # pylint: disable=invalid-name
 # pylint: disable=unused-argument
-from google.cloud import vision, storage # pylint: disable=no-name-in-module
+from google.cloud import vision, storage # pylint: disable=import-error
 
 storage_client = storage.Client()
 client = vision.ImageAnnotatorClient()
