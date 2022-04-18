@@ -12,8 +12,9 @@ steps:
       apk add py3-pip
       pip3 install -U setuptools
       pip3 install -U pylint
-      pip3 install google-cloud-storage
-      pip3 install google-cloud-vision
+      echo "*********** Installing Cloud************"
+      pip3 install --upgrade google-cloud-vision
+      pip3 install --upgrade google-cloud-storage
       cd Proyecto1/LuisMora_P1/proyecto/cloud_function
       pylint main.py
 
