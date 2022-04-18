@@ -9,9 +9,8 @@ steps:
       echo "$BRANCH_NAME"
       echo "***********************"
       echo "*********** Cheking Code ************"
-      FROM python:3.4-alpine
-      RUN pip3 install -U setuptools
-      RUN pip3 install -U pylint
+      pip3 install -U setuptools
+      pip3 install -U pylint
       cd Proyecto1/LuisMora_P1/proyecto/cloud_function
       pylint main.py
 
