@@ -44,20 +44,12 @@ def main(data, context):# pylint: disable=missing-function-docstring
 
         bucket_name = file_data["bucket"]
 
-        #blob = storage_client.bucket(bucket_name).get_blob(file_name)
         blob_uri = f"gs://{bucket_name}/{file_name}"
 
         blob_source = vision.Image(source=vision.ImageSource(image_uri=blob_uri))
 
 
         print(f"Analyzing {file_name}.")
-
-        """ image_to_open = 'images/cara.jpg'
-
-        with open(image_to_open, 'rb') as image_file:
-            content = image_file.read()
-
-        image = vision.Image(content=content) """
 
         face_response = vision_client.face_detection(image=blob_source)
 
