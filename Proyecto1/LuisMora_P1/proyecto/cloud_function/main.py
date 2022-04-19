@@ -17,6 +17,26 @@ def main(data, context):# pylint: disable=missing-function-docstring
     
     if (data == {}):
         print("Sin datos de entrada")
+        image_to_open = 'images/cara.jpg'
+
+        with open(image_to_open, 'rb') as image_file:
+            content = image_file.read()
+
+        image = vision.Image(content=content)
+        
+        print(f"Analyzing test image.")
+
+        face_response = client.face_detection(image=image)
+
+        for face_detection in face_response.face_annotations:
+            d={
+                'confidence': face_detection.detection_confidence,
+                'joy': face_detection.joy_likelihood,
+                'sorrow': face_detection.sorrow_likelihood,
+                'surprise': face_detection.surprise_likelihood,
+                'anger': face_detection.anger_likelihood
+            }
+            print(d)
     else:
         file_data = data
 
