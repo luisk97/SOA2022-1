@@ -14,6 +14,7 @@ def main(data, context):# pylint: disable=missing-function-docstring
     file_data = data
 
     file_name = file_data["name"]
+    print(f"A ver {file_name}.")
     bucket_name = file_data["bucket"]
 
     #blob = storage_client.bucket(bucket_name).get_blob(file_name)
