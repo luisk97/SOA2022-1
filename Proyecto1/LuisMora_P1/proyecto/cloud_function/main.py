@@ -24,9 +24,9 @@ def main(data, context):# pylint: disable=missing-function-docstring
 
         image = vision.Image(content=content)
         
-        print(f"Analyzing test image.")
+        print("Analyzing test image.")
 
-        face_response = client.face_detection(image=image)
+        face_response = vision_client.face_detection(image=image)
 
         for face_detection in face_response.face_annotations:
             d={
