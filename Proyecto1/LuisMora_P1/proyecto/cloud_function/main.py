@@ -2,6 +2,7 @@
 # pylint: disable=invalid-name
 # pylint: disable=unused-argument
 # pylint: disable=pointless-string-statement
+# pylint: disable=trailing-whitespace
 from google.cloud import vision, storage # pylint: disable=import-error
 
 storage_client = storage.Client()
