@@ -26,6 +26,9 @@ steps:
       if [ -d "Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME/" ]; then
         ls
         cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME
+        echo "*************** TERRAFOM INIT 1 ******************"
+        echo "******* At environment: ${env} ********"
+        echo "*************************************************"
         terraform init
       else
         ls
@@ -35,7 +38,7 @@ steps:
           env=${dir%*/}
           env=${env#*/}
           echo ""
-          echo "*************** TERRAFORM INIT ******************"
+          echo "*************** TERRAFORM INIT 2 ******************"
           echo "******* At environment: ${env} ********"
           echo "*************************************************"
           terraform init || exit 1
@@ -51,6 +54,9 @@ steps:
   - | 
       if [ -d "Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME/" ]; then
         cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME
+        echo "*************** TERRAFOM PLAN 1 ******************"
+        echo "******* At environment: ${env} ********"
+        echo "*************************************************"
         terraform plan
       else
         for dir in Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/*/
@@ -59,7 +65,7 @@ steps:
           env=${dir%*/}
           env=${env#*/}  
           echo ""
-          echo "*************** TERRAFOM PLAN ******************"
+          echo "*************** TERRAFOM PLAN 2 ******************"
           echo "******* At environment: ${env} ********"
           echo "*************************************************"
           terraform plan || exit 1
@@ -76,11 +82,16 @@ steps:
   - '-c'
   - | 
       if [ -d "Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME/" ]; then
-        cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME      
+        cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/$BRANCH_NAME
+        echo "*************** TERRAFOM APPLY 1 ******************"
+        echo "******* At environment: ${env} ********"
+        echo "*************************************************"
         terraform apply -auto-approve
       else
-        echo "***************************** SKIPPING APPLYING *******************************"
-        echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
-        echo "*******************************************************************************"
+        cd Proyecto1/LuisMora_P1/proyecto/terraform/enviroments/develop
+        echo "*************** TERRAFOM APPLY 2 ******************"
+        echo "******* At environment: develop ********"
+        echo "*************************************************"
+        terraform apply -auto-approve
       fi
 # [END tf-apply]
